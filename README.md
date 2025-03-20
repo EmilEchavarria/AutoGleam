@@ -1,28 +1,48 @@
-# AutoGleam
+# AutoGleam 🚗✨  
+**Comprehensive Management Platform for Car Wash Businesses**  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.
+## 📌 Description  
+AutoGleam is a web application designed to optimize the management of car wash businesses. Its goal is to streamline service, employee, and customer management through an intuitive and efficient platform.  
 
-## Development server
+With AutoGleam, business owners can:  
+- Manage customers and track their service history.  
+- Schedule and organize car wash appointments.  
+- Assign tasks to employees and monitor their workload.  
+- View detailed analytics and reports for business performance.  
+- Offer an integrated payment system (currently under development, pending backend implementation).  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The project is built using **Angular, TypeScript, and Tailwind CSS**, ensuring a responsive and modern user experience.  
 
-## Code scaffolding
+## 🛠️ Technologies Used  
+- **Angular** – Frontend framework for building dynamic web applications.  
+- **TypeScript** – Provides type safety and improved development efficiency.  
+- **Tailwind CSS** – Utility-first CSS framework for a sleek and responsive design.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Installation  
+To run the project locally, follow these steps:  
 
-## Build
+1. Clone the repository:  
+   ```sh
+   git clone https://github.com/EmilEchavarria/AutoGleam.git
+   cd AutoGleam
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Future Updates  
+- **Backend Implementation**: Integration of the payment system and server-side features.  
+- **Mobile App**: Expansion of the platform to mobile devices for a more versatile user experience.  
+- **User Authentication**: Introduction of user login functionality for improved data security and personalized experiences.  
+- **Additional Features**: Integration of a rating system for services, customer loyalty programs, and automated reminders for appointments.  
 
-## Running unit tests
+## 👥 Contributing  
+Contributions are welcome! If you'd like to contribute to the development of AutoGleam, please follow these steps:  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Fork the repository.  
+2. Create a new branch (`git checkout -b feature-name`).  
+3. Make your changes and commit them (`git commit -m "Add feature"`).  
+4. Push to your fork (`git push origin feature-name`).  
+5. Open a Pull Request to the main branch.  
 
-## Running end-to-end tests
+If you have any questions or suggestions, feel free to open an issue or contact me directly.  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# AutoGleam
+## 📞 Contact  
+- 📷 Instagram: [@emilechavarria.c](https://www.instagram.com/emilechavarria.c/)  
+- 📧 Email: [emilechavarria2005@gmail.com](mailto:emilechavarria2005@gmail.com)  
