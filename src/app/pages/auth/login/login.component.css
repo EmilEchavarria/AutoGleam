@@ -1,0 +1,151 @@
+
+.gradient-form {
+    background-color: #ffffff;
+    min-height: 100vh; /* Ocupa toda la altura del viewport */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+  }
+  
+  .container {
+    padding: 0; /* Elimina espacios adicionales */
+  }
+  
+  .card {
+    margin: 0;
+    height: auto; /* Permite que el contenido ajuste su altura */
+  }
+  
+ 
+
+
+
+
+
+
+
+
+
+.gradient-custom-2 {
+    /* Fallback para navegadores antiguos */
+    background: linear-gradient(90deg, #1a252f, #2c3e50, #3c4e60, #344153); /* Colores más oscuros de azul y gris */
+    background-size: 400% 400%; /* Tamaño amplio para animación fluida */
+    animation: gradient-wave 10s ease infinite; /* Suavidad y duración ajustadas */
+    transition: background 1s ease-in-out, color 1s ease-in-out; /* Transiciones para el fondo y color de texto */
+}
+
+#text-white {
+    color: white; /* El color inicial es blanco */
+    transition: color 19s ease-in-out; /* Animación suave para el cambio de color */
+}
+
+/* Cuando el fondo es claro, el texto se vuelve negro */
+.gradient-custom-2.white-background #text-white {
+    color: black; /* Cambia a negro cuando el fondo es claro */
+}
+
+
+  
+  @keyframes gradient-wave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .min-vh-100 {
+    min-height: 100vh;
+  }
+  
+  .align-items-stretch {
+    align-items: stretch !important;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .login-button {
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 5px; /* Puedes ajustar el radio del borde para mantener la forma */
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 767px) {
+    .gradient-form {
+      padding: 1rem;
+    }
+  
+    .card {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .col-lg-6 {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .card-body {
+      padding: 1rem;
+    }
+  
+    img {
+      width: 150px;
+    }
+  
+    h4, p {
+      font-size: 1rem;
+    }
+  
+    .gradient-custom-2 {
+      padding: 1rem  40px ;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .gradient-custom-2 {
+      padding: 1.5rem;
+    }
+  
+    img {
+      width: 175px;
+    }
+  
+    h4 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .gradient-form {
+      padding: 2rem;
+    }
+  
+    .card {
+      display: flex;
+    }
+  
+    .col-lg-6 {
+      flex: 1;
+    }
+  
+    img {
+      width: 185px;
+    }
+  
+    h4 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  
+

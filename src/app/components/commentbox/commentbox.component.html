@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="comment-box-container">
+    <!-- Sección para agregar un nuevo comentario -->
+    <div class="new-comment animate__animated animate__fadeIn">
+      <div class="avatar">
+        <i class="bi bi-person-circle default-avatar"></i>
+      </div>
+      <textarea
+        [(ngModel)]="newComment.text"
+        placeholder="Escribe tu comentario..."
+        rows="4"
+        class="comment-input"
+      ></textarea>
+      <button (click)="submitComment()" class="submit-button">Comentar</button>
+    </div>
+
+    <div class="comments-list" [ngClass]="{ 'expanded': isExpanded }">
+      <div *ngFor="let comment of comments; let i = index" class="comment animate__animated animate__fadeIn">
+        <div class="comment-header">
+          <div class="avatar">
+            <i class="bi bi-person-circle default-avatar"></i>
+          </div>
+          <div class="comment-author">
+            <span class="text-dark">{{ userName }}</span>
+            <span class="comment-time">{{ (comment.time) }}</span> <!-- Mostrar el tiempo transcurrido -->
+          </div>
+        </div>
+        <p class="comment-text">{{ comment.text }}</p>
+        <div class="comment-footer">
+          <div class="likes-box">
+            <button (click)="incrementLikes(comment, i)" class="like-button animate__animated animate__bounceIn">👍</button>
+            <span>{{ comment.likes }}</span>
+          </div>
+          <button (click)="deleteComment(i)" class="delete-button animate__animated animate__bounceIn">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón para expandir los comentarios -->
+
+  </div>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d3784.1476350424828!2d-69.9140431!3d18.4769707!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d18.4762065!2d-69.9135318!5e0!3m2!1ses-419!2sdo!4v1733101922997!5m2!1ses-419!2sdo"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>

@@ -1,0 +1,122 @@
+<div class="home-container">
+    <div class="main-content">
+      <app-header />
+    
+      <!-- Centro de Soporte -->
+      <div class="container mt-5 animate__animated animate__fadeIn" style="background-color: #f8f9fa; padding: 40px; border-radius: 8px;">
+        <h1 class="text-center mb-4 text-primary animate__animated animate__bounceIn">
+          Centro de Soporte <i class="fas fa-headset fa-spin"></i>
+        </h1>
+    
+
+
+  <!-- Sección de ayuda adicional -->
+  <div class="container mt-5 animate__animated animate__fadeInLeft" style="background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h3 class="text-center mb-4">¿Necesitas Ayuda? <i class="fas fa-question-circle"></i></h3>
+    <p class="text-center mb-4">
+      Si estás experimentando problemas, no dudes en ponerte en contacto con nuestro equipo de soporte. ¡Estamos aquí para ayudarte!
+    </p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card animate__animated animate__fadeInUp" style="border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="card-body">
+            <h5 class="card-title">Soporte Técnico <i class="fas fa-tools"></i></h5>
+            <p class="card-text">Para cualquier problema técnico relacionado con nuestro servicio.</p>
+            <button class="btn btn-primary w-100" data-bs-toggle="tooltip" title="Contactar Soporte">
+              Contactar Soporte <i class="fas fa-life-ring"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card animate__animated animate__fadeInUp" style="border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="card-body">
+            <h5 class="card-title">Facturación y Pagos <i class="fas fa-credit-card"></i></h5>
+            <p class="card-text">Para problemas de facturación o preguntas relacionadas con pagos.</p>
+            <button class="btn btn-primary w-100" data-bs-toggle="tooltip" title="Contactar Soporte">
+              Contactar Soporte <i class="fas fa-life-ring"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card animate__animated animate__fadeInUp" style="border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="card-body">
+            <h5 class="card-title">Consultas Generales <i class="fas fa-comments"></i></h5>
+            <p class="card-text">Para cualquier otra pregunta o consulta general.</p>
+            <button class="btn btn-primary w-100" data-bs-toggle="tooltip" title="Contactar Soporte">
+              Contactar Soporte <i class="fas fa-life-ring"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-4">
+    <h3>{{ isEditing ? 'Editar Correo' : 'Nuevo Correo' }}</h3>
+    <form (submit)="sendEmail($event)">
+      <div class="mb-3">
+        <label for="subject" class="form-label">Asunto</label>
+        <input type="text" class="form-control" id="subject" [(ngModel)]="emailData.subject" name="subject" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="message" rows="3" [(ngModel)]="emailData.message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Enviar' }}</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancelar</button>
+    </form>
+  </div>
+
+
+
+
+<!-- Historial de correos enviados -->
+<div class="container mt-5 animate__animated animate__fadeInUp" style="background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h3 class="text-center mb-4">Historial de Correos <i class="fas fa-history"></i></h3>
+    <div *ngIf="emailHistory.length === 0" class="alert alert-info text-center">
+      No se han enviado correos aún.
+    </div>
+    <ul class="list-group">
+      <li *ngFor="let email of emailHistory; let i = index" class="list-group-item">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <p><strong>De:</strong> {{ userEmail }}</p>
+            <p><strong>Asunto:</strong> {{ email.subject }}</p>
+          </div>
+          <div>
+            
+            <button class="btn btn-danger btn-sm" (click)="deleteEmail(i)" data-bs-toggle="tooltip" title="Eliminar correo">
+              <i class="fas fa-trash-alt"></i> Eliminar
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  
+    
+      
+        <!-- Sección de contacto -->
+        <div class="container mt-5 animate__animated animate__fadeInRight" style="background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <h3 class="text-center mb-4">Información de Contacto <i class="fas fa-phone-alt"></i></h3>
+          <p class="text-center mb-4">
+            ¡Contáctanos en cualquier momento! Nuestro equipo de soporte está disponible 24/7.
+          </p>
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Email:</strong> supportautogleam.com <i class="fas fa-envelope"></i></li>
+            <li class="list-group-item"><strong>Teléfono:</strong> +1 (123) 123-123 <i class="fas fa-phone"></i></li>
+            <li class="list-group-item"><strong>Horario de Oficina:</strong> Lunes a Viernes, 9 AM - 5 PM <i class="fas fa-clock"></i></li>
+          </ul>
+        </div>
+    
+        
+      </div>
+      <app-footer />
+    </div>
+  </div>
+  

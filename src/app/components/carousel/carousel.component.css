@@ -1,0 +1,126 @@
+
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+h2 {
+  color: #1a252f;
+}
+
+p {
+  color: rgb(35, 36, 36);
+}
+
+#myCarousel p {
+  color: rgb(255, 255, 255);
+}
+
+/* Customiza el carrusel */
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 45rem;
+}
+
+#img p, h2
+{
+  margin-top: 2%;
+}
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.589);
+  z-index: 1;
+}
+/* Animación de aparición con desplazamiento */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Clase que se agrega cuando el elemento es visible */
+.visible {
+  opacity: 1;
+  transform: translateX(0); /* o translateY(0) dependiendo de la animación */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%; /* Asegura que la imagen cubra toda la altura del contenedor */
+  object-fit: cover; /* Ajusta la imagen para llenar el contenedor sin deformarse */
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 576px) {
+  .carousel-item img {
+    object-fit: cover; /* Mantiene la cobertura del contenedor en pantallas pequeñas */
+  }
+}
+
+/* Ajustes de marketing */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.marketing .col-lg-4 p {
+  margin: 0 .75rem;
+}
+
+/* Featurettes */
+.featurette-divider {
+  margin: 5rem 0;
+}
+
+.featurette-heading {
+  letter-spacing: -.05rem;
+}
+
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+/* Clase adicional para imágenes fluidas */
+.img-fluid {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

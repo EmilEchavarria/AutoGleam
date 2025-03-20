@@ -1,0 +1,149 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar">
+      <app-adminsidebar></app-adminsidebar>
+    </div>
+
+    <!-- Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <h1 class="text-center my-4 text-white">Manejo de Servicios</h1>
+
+      <!-- Section: Roles -->
+      <section class="mb-5">
+        <h2 class="text-white">Gestión de Servicios</h2>
+
+        <!-- Formulario para agregar o editar servicios -->
+        <form (ngSubmit)="guardarServicio()" class="p-3 mb-4 bg-custom rounded shadow">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="imagen" class="form-label">Imagen del Servicio</label>
+              <input
+                type="file"
+                id="imagen"
+                class="form-control bg-light text-dark"
+                (change)="onImageSelected($event)"
+                accept="image/*"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="titulo" class="form-label">Título</label>
+              <input
+                type="text"
+                id="titulo"
+                [(ngModel)]="nuevoServicio.titulo"
+                name="titulo"
+                class="form-control bg-light text-dark"
+                placeholder="Título del Servicio"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-8">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <textarea
+                id="descripcion"
+                [(ngModel)]="nuevoServicio.descripcion"
+                name="descripcion"
+                class="form-control bg-light text-dark"
+                rows="2"
+                placeholder="Descripción del Servicio"
+              ></textarea>
+            </div>
+            <div class="col-md-4">
+              <label for="precio" class="form-label">Precio</label>
+              <input
+                type="number"
+                id="precio"
+                [(ngModel)]="nuevoServicio.precio"
+                name="precio"
+                class="form-control bg-light text-dark"
+                placeholder="Precio (USD)"
+                min="0"
+                required
+              />
+            </div>
+            <section class="mb-5">
+              <h2 class="text-white">Vehículos</h2>
+              <form id="form-vehiculos" class="d-flex gap-2 mb-3">
+                <input type="text" id="marca" class="form-control bg-white" placeholder="Marca" required>
+                <input type="text" id="dueno" class="form-control bg-white" placeholder="Modelo" required>
+              </form>
+              <div class="table-responsive">
+                <table id="vehiculos-table" class="table table-bordered bg-white">
+                  <thead>
+                    <tr>
+                      <th>Marca</th>
+                      <th>Modelo</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </section>
+
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar Servicio</button>
+        
+        
+        
+        </form>
+
+
+
+        
+        <div class="table-responsive bg-custom rounded shadow p-3">
+          <table class="table bg-white table-hover table-striped">
+            <thead>
+              <tr class="text-center">
+                <th>Imagen</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let servicio of servicios" class="align-middle">
+                <td class="text-center">
+                  <img
+                    [src]="servicio.imagen"
+                    alt="Servicio"
+                    class="img-thumbnail"
+                    width="100"
+                  />
+                </td>
+                <td>titulo </td>
+                <td>descripcion</td>
+                <td class="text-center">$ servicio.precio </td>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <td class="text-center">
+                  <button
+                    class="btn btn-sm btn-warning me-2"aa
+                    (click)="editarServicio(servicio)"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    class="btn btn-sm btn-danger"
+                    (click)="eliminarServicio(servicio)"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        
+        
+      </section>
+    </main>
+  </div>
+</div>

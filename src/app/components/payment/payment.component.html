@@ -1,0 +1,89 @@
+<div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
+  <div class="container shadow p-4 bg-light mt-3">
+    <div class="card p-4 border-0 rounded-lg">
+      <!-- Mensaje de éxito -->
+      <div 
+        class="alert alert-success text-center animate__animated animate__fadeIn" 
+        *ngIf="paymentSuccess">
+        ¡Pago realizado con éxito!
+      </div>
+
+      <h2 class="text-center mb-4 text-primary">Pago</h2>
+      <p class="text-center text-muted">
+        Total a Pagar: 
+        <span 
+          class="text-success fw-bold display-6">
+          RD${{ total | number: '1.2-2' }}
+        </span>
+      </p>
+      
+      <form [formGroup]="paymentForm" (ngSubmit)="submitPayment()">
+        <div class="mb-4">
+          <label for="cardNumber" class="form-label fw-bold">Número de Tarjeta</label>
+          <input 
+            type="text" 
+            id="cardNumber" 
+            formControlName="cardNumber" 
+            class="form-control shadow-sm" 
+            placeholder="Ingrese su número de tarjeta" 
+            maxlength="16">
+          <small class="text-danger" *ngIf="paymentForm.get('cardNumber')?.invalid && paymentForm.get('cardNumber')?.touched">
+            Número de tarjeta inválido. Debe contener 16 dígitos.
+          </small>
+        </div>
+        
+        <div class="mb-4">
+          <label for="cardName" class="form-label fw-bold">Nombre en la Tarjeta</label>
+          <input 
+            type="text" 
+            id="cardName" 
+            formControlName="cardName" 
+            class="form-control shadow-sm" 
+            placeholder="Ingrese el nombre en la tarjeta" 
+            maxlength="50">
+          <small class="text-danger" *ngIf="paymentForm.get('cardName')?.invalid && paymentForm.get('cardName')?.touched">
+            Nombre inválido. Debe tener al menos 3 caracteres.
+          </small>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <label for="expiryDate" class="form-label fw-bold">Fecha de Expiración</label>
+            <input 
+              type="text" 
+              id="expiryDate" 
+              formControlName="expiryDate" 
+              class="form-control shadow-sm" 
+              placeholder="MM/AA" 
+              maxlength="5" 
+              (input)="formatExpiryDate($event)">
+            <small class="text-danger" *ngIf="paymentForm.get('expiryDate')?.invalid && paymentForm.get('expiryDate')?.touched">
+              Fecha inválida. Usa el formato MM/AA.
+            </small>
+          </div>
+        
+          <div class="col-md-6 mb-4">
+            <label for="cvv" class="form-label fw-bold">CVV</label>
+            <input 
+              type="text" 
+              id="cvv" 
+              formControlName="cvv" 
+              class="form-control shadow-sm" 
+              placeholder="Ingrese el CVV" 
+              maxlength="3">
+            <small class="text-danger" *ngIf="paymentForm.get('cvv')?.invalid && paymentForm.get('cvv')?.touched">
+              CVV inválido. Debe contener 3 dígitos.
+            </small>
+          </div>
+        </div>
+        
+        <button 
+          type="submit" 
+          class="btn btn-primary w-100 shadow-lg rounded-pill" 
+          [disabled]="paymentForm.invalid">
+          Pagar Ahora
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

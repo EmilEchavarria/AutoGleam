@@ -1,0 +1,82 @@
+/* General Styles for Sidebar */
+#sidebar-wrapper {
+  display: flex;
+}
+
+#sidebar {
+  width: 280px;                /* Ancho fijo para el sidebar */
+  height: 100vh;               /* Asegura que el sidebar ocupe toda la altura de la pantalla */
+  position: fixed;             /* Fija el sidebar a la izquierda */
+  top: 0;
+  left: 0;
+  background-color: #343a40;   /* Fondo oscuro para el sidebar */
+  color: white;                /* Texto blanco */
+  padding-top: 20px;            /* Espacio superior para el contenido */
+  transition: transform 0.3s ease; /* Animación para el slide */
+}
+
+/* Estilo del encabezado del Sidebar */
+.sidebar-header h3 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo de las opciones del menú */
+.nav-item {
+  padding: 10px 0;
+}
+
+.nav-link {
+  color: #ffffff;             /* Color de texto blanco para los enlaces */
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: #007bff;  /* Color de fondo al pasar el mouse */
+  border-radius: 5px;         /* Bordes redondeados para los enlaces */
+  padding-left: 20px;         /* Desplazamiento hacia la izquierda en hover */
+}
+
+/* Estilo del pie de página del Sidebar */
+.sidebar-footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Para hacer que el contenido principal (main) ocupe el espacio restante */
+.main-content {
+  margin-left: 280px;          /* Deja espacio para el sidebar */
+  padding: 20px;
+  flex: 1;
+  background-color: #f8f9fa;   /* Fondo gris claro para el contenido */
+  box-sizing: border-box;
+}
+
+/* En pantallas pequeñas, oculta el sidebar y muestra un botón */
+@media (max-width: 767px) {
+  #sidebar {
+    position: absolute;
+    transform: translateX(-100%); /* Oculta el sidebar fuera de la pantalla */
+  }
+
+  .main-content {
+    margin-left: 0; /* El contenido principal toma el ancho completo */
+  }
+
+  #sidebar-wrapper.active #sidebar {
+    transform: translateX(0); /* Muestra el sidebar cuando está activo */
+  }
+
+  /* Botón para activar el sidebar */
+  #sidebarToggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+  }
+}

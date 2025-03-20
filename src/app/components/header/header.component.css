@@ -1,0 +1,172 @@
+.custom-logo {
+    width: 70px;   /* Ajusta este valor según lo pequeño que desees la imagen */
+    height: auto;  /* Mantiene la proporción de la imagen */
+  }
+ /* Cambiar el color de los enlaces dentro de los <li> */
+.nav-link {
+    color: #131b22; /* Aplica el color especificado */
+    font-weight: 600px;
+    font-size: 19px;
+}
+  
+  .nav-link:hover {
+    color: #0a55df; /* Opcional: Cambia el color al pasar el mouse, si lo deseas */
+  }
+  /* Agregar separación de 20px entre los <li> */
+.nav > li {
+    margin-right: 50px;
+  }
+  
+  /* Elimina el margen adicional en el último <li> */
+  .nav > li:last-child {
+    margin-right: 0;
+  }
+  
+
+  .navbar-toggler i {
+    font-size: 2.6rem !important; /* Ajusta este valor según lo necesites */
+  }
+  
+
+
+
+
+
+  /* Estilos del Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Oculta el sidebar inicialmente */
+  width: 250px;
+  height: 100vh;
+  background-color: #131b22;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.sidebar-open {
+  left: 0; /* Muestra el sidebar */
+}
+
+.close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 1rem;
+}
+
+.sidebar-menu .nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.sidebar-menu .nav-link:hover {
+  color: #0a55df; /* Color al pasar el cursor */
+}
+
+/* Ajustes del ícono de hamburguesa */
+.navbar-toggler {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-toggler .bi-list {
+  color: #131b22;
+}
+
+/* Responsividad para pantallas pequeñas */
+
+@media (max-width: 1200px) {
+ 
+
+  .custom-logo {
+    width: 50px; /* Reduce el tamaño del logo */
+  }
+
+  .nav {
+    flex: 1; /* Ocupa el espacio restante */
+    justify-content: flex-end; /* Mantiene los enlaces alineados a la derecha */
+  }
+
+  .nav > li > a {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  }
+
+  /* Mostrar el botón de menú */
+  .navbar-toggler {
+    display: block;
+    margin-left: auto; /* Alinea el botón a la derecha */
+  }
+
+  /* Esconder el menú inicialmente */
+  .nav {
+    display: none;
+    width: 100%; /* Abarca todo el ancho */
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .custom-logo {
+    width: 50px; /* Reduce el tamaño del logo */
+  }
+
+ 
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 576px) {
+  .sidebar {
+    width: 180px; /* Sidebar más pequeño */
+  }
+
+  .sidebar-menu .nav-link {
+    font-size: 0.9rem; /* Texto más pequeño */
+  }
+  
+}
+@media (max-width: 990px) {
+  /* Reducir el tamaño del logo */
+  .custom-logo {
+    width: 50px; /* Reduce el tamaño del logo */
+  }
+
+  /* Reducir el tamaño del texto de los enlaces de la barra lateral (sidebar) */
+  .sidebar-menu .nav-link {
+    font-size: 1rem; /* Texto más pequeño en móviles */
+  }
+
+  /* Reducir el espacio entre los enlaces del header */
+  .nav {
+    gap: 0px; /* Espacio más pequeño entre los enlaces */
+  }
+
+  /* Reducir el margen entre los <li> */
+  .nav > li {
+    margin-right: 16px; /* Menos espacio entre los elementos */
+  }
+
+  /* Estilo adicional en el menú desplegable en móviles (si es necesario) */
+  .navbar-toggler {
+    display: flex;
+  }
+}

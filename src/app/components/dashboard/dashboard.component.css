@@ -1,0 +1,96 @@
+/* Asegura que el contenedor principal ocupe toda la altura disponible */
+.home-container {
+  display: flex;                /* Usa flexbox para organizar los elementos */
+  min-height: 100vh;            /* Asegura que el contenedor ocupe toda la altura de la ventana */
+  margin: 0;                    /* Elimina márgenes por defecto */
+  padding: 0;
+  background-color: #d6d6d6;    /* Blanco hueso */
+}
+
+/* Contenido principal */
+.main-content {
+  width: calc(100% - 280px);    /* Ajusta el ancho del contenido principal */
+  flex: 1;                      /* Asegura que el contenido principal ocupe el resto del espacio disponible */
+  display: flex;                /* Usa flexbox para el contenido principal */
+  flex-direction: column;       /* Organiza el contenido en una columna */
+}
+
+/* Personaliza el header y footer */
+app-header {
+  background-color: white;      /* Fondo blanco para el header */
+  flex-shrink: 0;               /* Evita que el header se encoja */
+}
+
+app-footer {
+  background-color: #1a252f;    /* Fondo oscuro para el footer */
+  color: white;                 /* Texto blanco */
+  padding: 25px 0;              /* Espaciado interno en el footer */
+  text-align: center;           /* Alineación centrada del texto */
+  margin-top: auto;             /* Esto asegura que el footer esté pegado al fondo */
+  flex-shrink: 0;               /* Evita que el footer se encoja */
+}
+
+/* Diseño para las secciones internas */
+.home-section {
+  padding: 20px;
+  background-color: #f5f5f5;    /* Fondo blanco suave */
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.service-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about, .contact {
+  margin-bottom: 30px;
+}
+
+/* Estilo de botones */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+/* Animación suave al pasar el mouse */
+.hover-shadow:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+  transition: all 101.10s ease;
+}
+
+/* Fondo personalizado para las tablas */
+.table-light {
+  background-color: #f9f9f9;
+}
+
+/* Estilo del contenedor principal */
+.home-container {
+  background-color: #f0f4f7;
+  min-height: 100vh;
+}
+
+/* Fondo de la fila de notificaciones */
+.list-group-item.bg-light {
+  background-color: #f8f9fa;
+}

@@ -1,0 +1,74 @@
+.container-fluid {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+h1.title {
+  font-size: 2.5rem;
+  margin-top:110px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.cart-item {
+  transition: transform 0.3s ease-in-out;
+}
+
+.cart-item:hover {
+  transform: scale(1.02);
+}
+
+.cart-item-image {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .cart-item-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-body {
+    flex-direction: row;
+  }
+}
+
+.btn {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.row {
+  margin-bottom: 15px; /* Reducir la separación entre filas */
+}
+
+.col-lg-4 {
+  position: relative;
+  max-width: 400px;
+  margin: auto; /* Centrado natural */
+  padding: 0 20px; /* Añadir padding para centrar mejor */
+}

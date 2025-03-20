@@ -1,0 +1,47 @@
+<script>
+  // Obtener el botón y el contenedor del sidebar
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebarWrapper = document.getElementById('sidebar-wrapper');
+
+  // Agregar evento para alternar la clase 'active'
+  sidebarToggle.addEventListener('click', function() {
+    sidebarWrapper.classList.toggle('active');
+  });
+</script>
+<div class="d-flex" id="sidebar-wrapper">
+  <div class="bg-dark text-white" id="sidebar">
+    <div class="sidebar-header p-4">
+      <h3>Mi Sidebar</h3>
+    </div>
+    <ul class="nav flex-column p-3">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Customers</a>
+      </li>
+    </ul>
+    <div class="sidebar-footer p-4">
+      <a href="#" class="text-white">Log Out</a>
+    </div>
+  </div>
+</div>
+
+<!-- Button to toggle Sidebar on small screens -->
+<button class="btn btn-primary d-md-none" id="sidebarToggle">
+  <i class="bi bi-list"></i> <!-- Icono de lista -->
+</button>
+
+<!-- Main Content -->
+<div class="main-content">
+  <!-- Aquí va el contenido principal de tu página -->
+</div>

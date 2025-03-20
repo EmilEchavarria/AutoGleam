@@ -1,0 +1,100 @@
+<div class="container mt-5">
+
+
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="bi bi-house-door"></i> Dashboard
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-gear"></i> Servicios
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/usermanage" >
+                <i class="bi bi-people"></i> Manejo de Usuarios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-bar-chart"></i> Manejo de Empleados
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-gear"></i> Ajustes
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <h1 class="text-center mb-4">Mantenimiento de Entidades</h1>
+
+    <!-- Formulario para Roles -->
+    <section class="mb-5">
+        <h2>Roles</h2>
+        <form id="form-roles" class="d-flex gap-2 mb-3">
+            <input type="text" id="rol" class="form-control" placeholder="Nombre del Rol" required>
+            <button type="submit" class="btn btn-primary">Agregar Rol</button>
+        </form>
+        <table id="roles-table" class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Formulario para Usuarios -->
+    <section class="mb-5">
+        <h2>Usuarios</h2>
+        <form id="form-usuarios" class="d-flex gap-2 mb-3">
+            <input type="email" id="email" class="form-control" placeholder="Email" required>
+            <input type="password" id="password" class="form-control" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+        </form>
+        <table id="usuarios-table" class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Formulario para Vehículos -->
+    <section class="mb-5">
+        <h2>Vehículos</h2>
+        <form id="form-vehiculos" class="d-flex gap-2 mb-3">
+            <input type="text" id="marca" class="form-control" placeholder="Marca" required>
+            <input type="text" id="nopLaca" class="form-control" placeholder="No. Placa" required>
+            <input type="text" id="dueno" class="form-control" placeholder="Dueño" required>
+            <button type="submit" class="btn btn-primary">Agregar Vehículo</button>
+        </form>
+        <table id="vehiculos-table" class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Marca</th>
+                    <th>Placa</th>
+                    <th>Dueño</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>

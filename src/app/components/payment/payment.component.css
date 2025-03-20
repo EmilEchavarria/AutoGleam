@@ -1,0 +1,83 @@
+.container {
+  max-width: 600px;
+  margin: auto;
+  border-radius: 15px;
+}
+.container-fluid {
+  background: white; 
+}
+.card {
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.btn.animate__pulse {
+  animation-duration: 5s;
+  animation-iteration-count: 1; /* Esto hace que la animación se ejecute solo una vez */
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #4a90e2;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: #4a90e2;
+  border: none;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #357abd;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.text-primary {
+  color: #1a252f !important;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.display-6 {
+  font-size: 2.5rem;
+}

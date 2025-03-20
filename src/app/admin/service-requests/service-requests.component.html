@@ -1,0 +1,60 @@
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar">
+        <app-adminsidebar/>
+    </div>
+  
+
+
+
+
+
+
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <h1 class="text-center my-4 text-white">Solicitudes de Servicios</h1>
+  
+        <section class="mb-5">
+          <h2 class="text-white">Empleados</h2>
+          <div class="table-responsive">
+            <table id="roles-table" class="table table-bordered bg-white">
+                <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Cliente</th>
+                      <th>Servicio</th>
+                      <th>Fecha</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+  
+        <tbody>
+            <tr *ngFor="let request of serviceRequests">
+              <td>{{ request.id }}</td>
+              <td>{{ request.cliente }}</td>
+              <td>
+                <ul>
+                  <li *ngFor="let servicio of request.servicios">{{ servicio.name }}</li>
+                </ul>
+              </td>
+              <td>{{ request.fecha | date }}</td>
+              <td>{{ request.estado }}</td>
+              <td>
+                <button class="action-btn">Ver Detalles</button>
+                <button class="action-btn">Actualizar</button>
+                <button class="action-btn">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+         
+      </main>
+    </div>
+  </div>
+  

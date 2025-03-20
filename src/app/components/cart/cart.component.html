@@ -1,0 +1,59 @@
+<div class="container-fluid d-flex flex-column justify-content-between align-items-center min-vh-100 bg-white">
+  <!-- Título del carrito -->
+  <div class="row w-100 justify-content-center mb-5">
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <h1 class="text-center text-primary title">Your Shopping Cart</h1>
+    </div>
+  </div>
+  
+  <!-- Columna de productos -->
+  <div class="row w-100 justify-content-center flex-grow-1">
+    <div class="col-lg-8" style="overflow-y: auto; max-height: calc(100vh - 300px);">
+      <div *ngFor="let item of cartItems; let i = index" class="card mb-4 shadow-lg border-0 rounded-3 cart-item animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+        <div class="card-body d-flex flex-column flex-md-row align-items-center">
+          <!-- Imagen del servicio -->
+          <img src="{{ item.service.image }}" alt="Service Image" class="img-fluid me-3 rounded cart-item-image">
+
+          <div class="d-flex flex-column ms-3">
+            <h5 class="card-title mb-1 text-primary">{{ item.service.name }}</h5>
+            <p class="card-text mb-1">{{ item.service.description }}</p>
+            <p class="text-muted">Precio: ${{ item.service.price }}</p>
+            <!-- Mostrar información del vehículo -->
+            <p class="text-muted mb-1">Marca: {{ item.brand }}</p>
+            <p class="text-muted mb-1">Modelo: {{ item.model }}</p>
+            <p class="text-muted mb-1">Empleado: {{ item.employee }}</p> <!-- Aquí se muestra el empleado -->
+            <span *ngIf="!isEditing" class="text-dark">Cliente:{{ userName }}</span>
+
+            
+          </div>
+
+          <!-- Botón de eliminar -->
+          <button (click)="removeItem(i)" class="btn btn-outline-danger ms-auto mt-3 mt-md-0">
+            <i class="bi bi-trash"></i> Eliminar
+          </button>
+
+          
+        </div>
+        
+      </div>
+      <div class="row w-100 justify-content-center align-items-end mt-auto mb-5">
+        <div class="col-lg-4">
+          <div class="card border-1 shadow-lg p-4">
+            <h4 class="text-center fw-bold text-dark mb-3">Resumen del Pedido</h4>
+            <p class="text-center text-muted mb-4">Total a Pagar:</p>
+            <h5 class="text-center text-success fw-bold display-6">RD${{ totalPrice | number: '1.2-2' }}</h5>
+            <button
+            class="btn btn-primary btn-lg w-100 mt-4 rounded-pill"
+            [routerLink]="['/payment']"
+            [queryParams]="{ total: totalPrice }">
+            Proceder a la Compra
+          </button>
+                    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Columna del total -->
+  
+</div>

@@ -1,0 +1,43 @@
+/* Estilos personalizados para el panel de empleados */
+
+.sidebar {
+    min-height: 100vh;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .sidebar .nav-link {
+    font-weight: 500;
+    color: #ffffff;
+    padding-top: 20px;
+  }
+  
+  .sidebar .nav-link:hover {
+    color: #5d3ee4;
+  }
+  
+  #sidebarMenu{
+    background-color: #171821;
+  }
+
+  .card {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .table-responsive {
+    margin-top: 1rem;
+  }
+  
+  .btn-success, .btn-warning {
+    margin-right: 0.5rem;
+  }
+  
+  .bg-white {
+    background-color:#21222d !important;    
+    color: #ffffff;
+
+  }
+  

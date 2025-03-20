@@ -1,0 +1,166 @@
+
+  
+  main {
+    margin-left: 17%; /* Ajusta el espacio para el sidebar */
+    width: 83.4%; /* Asegúrate de que el contenido principal no se superponga */
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      position: relative; /* Permite que el sidebar sea responsivo */
+      height: auto;
+    }
+    main {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  .sidebar {
+    height: 100vh; /* Asegura que el sidebar ocupe toda la altura de la pantalla */
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+ 
+
+  #sidebarMenu{
+    background-color: #171821;
+  }
+  
+  .sidebar .nav-link:hover {
+    color: #5d3ee4;
+  }/* Sidebar */
+.sidebar {
+    min-height: 100vh;
+    background-color: #171821; /* Fondo oscuro del sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #ffffff; /* Texto blanco */
+    padding-top: 20px;
+}
+
+.sidebar .nav-link:hover {
+    color: #5d3ee4; /* Color morado claro al pasar el mouse */
+}
+
+/* Fondo del contenido principal */
+main {
+    background-color: #21222d; /* Fondo más claro que el sidebar */
+    color: #ffffff; /* Texto blanco */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Formulario */
+form input {
+    background-color: #2b2c37; /* Fondo del input */
+    color: #ffffff; /* Texto blanco */
+    border: 1px solid #444; /* Borde gris oscuro */
+}
+
+form input::placeholder {
+    color: #757575; /* Color gris claro para los placeholders */
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #5d3ee4; /* Botón azul/morado */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #4732b0; /* Botón más oscuro al pasar el mouse */
+}
+
+/* Tablas */
+.table {
+    background-color: #2b2c37; /* Fondo claro para las tablas */
+    color: #b60c0c; /* Texto blanco */
+}
+
+.table th,
+.table td {
+    border-color: #444; /* Bordes gris oscuro */
+}
+
+/* Títulos */
+h1, h2 {
+    color: #ffffff; /* Texto blanco */
+}
+/* Fondo oscuro para la sección y colores ajustados */
+.bg-custom {
+  background-color: #2b2c37; /* Color oscuro personalizado */
+  color: white; /* Texto claro para contraste */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shadow {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste para campos de formulario */
+.form-control {
+  background-color: #f8f9fa; /* Fondo claro */
+  color: #212529; /* Texto oscuro */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.form-control:focus {
+  background-color: #ffffff; /* Fondo más claro al enfocarse */
+  color: #212529;
+  border-color: #007bff; /* Resalta el borde al enfocarse */
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Bordes de tabla más definidos en fondo oscuro */
+.table-bordered {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+/* Ajuste general para la tabla */
+.table {
+  border-spacing: 0 10px; /* Espaciado entre filas */
+  border-collapse: separate;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Color claro al pasar el mouse */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa; /* Alterna el color de fondo */
+}
+
+/* Ajuste del espacio entre columnas */
+.table th,
+.table td {
+  padding: 12px 15px;
+  vertical-align: middle;
+}
+
+/* Ajuste de imagen dentro de las filas */
+.img-thumbnail {
+  border-radius: 8px; /* Bordes más redondeados para las imágenes */
+  max-height: 80px; /* Ajusta el tamaño máximo de las imágenes */
+}
+
+/* Botones dentro de la tabla */
+.btn {
+  padding: 6px 10px;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+  color: #212529;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}

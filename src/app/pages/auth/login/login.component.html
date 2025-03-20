@@ -1,0 +1,88 @@
+<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <!-- Left Column -->
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <div class="text-center">
+                  <img 
+                    src="./assets/img/withoutb.png"
+                    style="width: 185px;" 
+                    alt="logo"
+                  />
+                  <h4 class="mt-1 mb-5 pb-1">Nosotros Somos El Equipo De <br> Auto Gleam </h4>
+                </div>
+
+                <!-- Angular Form -->
+                <form [formGroup]="form" (ngSubmit)="login()">
+                  <p>Please login to your account</p>
+
+                  <!-- Email Input -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      placeholder="Email address"
+                      formControlName="email"
+                    />
+                    <label class="form-label" for="email">Email</label>
+                    <div class="text-danger" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+                      <small *ngIf="form.get('email')?.errors?.['required']">Email is required.</small>
+                      <small *ngIf="form.get('email')?.errors?.['email']">Enter a valid email.</small>
+                    </div>
+                  </div>
+
+                  <!-- Password Input -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control"
+                      placeholder="Password"
+                      formControlName="password"
+                    />
+                    <label class="form-label" for="password">Password</label>
+                    <div class="text-danger" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+                      <small *ngIf="form.get('password')?.errors?.['required']">Password is required.</small>
+                      <small *ngIf="form.get('password')?.errors?.['minlength']">
+                        Password must be at least 8 characters long.
+                      </small>
+                    </div>
+                  </div>
+
+                  <!-- Login Button -->
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button
+                      class="btn btn-primary btn-block gradient-custom-2 mb-3"
+                      type="submit"
+                      [disabled]="form.invalid">Log in</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div id="text-white" class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">Somos Más Que Una Empresa</h4>
+                <p class="small mb-0">
+                  Nuestro servicio de car wash ofrece una limpieza excepcional, 
+                  combinando tecnología avanzada y cuidado detallado. 
+                  Usamos productos premium que restauran el brillo original 
+                  de tu vehículo y protegen su pintura. Nuestro equipo se enfoca 
+                  en brindar un tratamiento personalizado, asegurando que tu auto
+                  luzca impecable y renovado, siempre con los más altos
+                    estándares de eficiencia y sostenibilidad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

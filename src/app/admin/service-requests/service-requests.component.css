@@ -1,0 +1,94 @@
+
+  
+  main {
+    margin-left: 17%; /* Ajusta el espacio para el sidebar */
+    width: 83.4%; /* Asegúrate de que el contenido principal no se superponga */
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      position: relative; /* Permite que el sidebar sea responsivo */
+      height: auto;
+    }
+    main {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  .sidebar {
+    height: 100vh; /* Asegura que el sidebar ocupe toda la altura de la pantalla */
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+ 
+
+  #sidebarMenu{
+    background-color: #171821;
+  }
+  
+  .sidebar .nav-link:hover {
+    color: #5d3ee4;
+  }/* Sidebar */
+.sidebar {
+    min-height: 100vh;
+    background-color: #171821; /* Fondo oscuro del sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #ffffff; /* Texto blanco */
+    padding-top: 20px;
+}
+
+.sidebar .nav-link:hover {
+    color: #5d3ee4; /* Color morado claro al pasar el mouse */
+}
+
+/* Fondo del contenido principal */
+main {
+    background-color: #21222d; /* Fondo más claro que el sidebar */
+    color: #ffffff; /* Texto blanco */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Formulario */
+form input {
+    background-color: #2b2c37; /* Fondo del input */
+    color: #ffffff; /* Texto blanco */
+    border: 1px solid #444; /* Borde gris oscuro */
+}
+
+form input::placeholder {
+    color: #a5a4a4; /* Color gris claro para los placeholders */
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #5d3ee4; /* Botón azul/morado */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #4732b0; /* Botón más oscuro al pasar el mouse */
+}
+
+/* Tablas */
+.table {
+    background-color: #2b2c37; /* Fondo claro para las tablas */
+    color: #ffffff; /* Texto blanco */
+}
+
+.table th,
+.table td {
+    border-color: #444; /* Bordes gris oscuro */
+}
+
+/* Títulos */
+h1, h2 {
+    color: #ffffff; /* Texto blanco */
+}

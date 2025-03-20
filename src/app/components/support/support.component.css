@@ -1,0 +1,160 @@
+/* Estilos generales */
+/* Asegura que el contenedor principal ocupe toda la altura disponible */
+.home-container {
+    display: flex;                /* Usa flexbox para organizar los elementos */
+    min-height: 100vh;            /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    margin: 0;                    /* Elimina márgenes por defecto */
+    padding: 0;    
+    background-color: #ffffff; /* Blanco hueso */
+  }
+  
+  /* Efecto de hover para las tarjetas: ampliación y sombra */
+.hover-effect {
+  transition: transform 0.8s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(0.99); /* Ampliación de la tarjeta */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más prominente al pasar el cursor */
+}
+
+/* Efecto de hover en el botón */
+.hover-effect button:hover {
+  background-color: #0056b3; /* Cambiar color de fondo al pasar el cursor */
+  transform: scale(1.1); /* Ampliar el botón ligeramente */
+}
+
+  
+  /* Contenido principal */
+  .main-content {
+    width: calc(100% - 280px);    /* Ajusta el ancho del contenido principal */
+    flex: 1;                      /* Asegura que el contenido principal ocupe el resto del espacio disponible */
+    display: flex;                /* Usa flexbox para el contenido principal */
+    flex-direction: column;       /* Organiza el contenido en una columna */
+  }
+  
+  /* Personaliza el header y footer */
+  app-header {
+    flex-shrink: 0;               /* Evita que el header se encoja */
+  }
+  
+  app-footer {
+    background-color: #1a252f;    /* Fondo de color */
+    color: white;                 /* Texto blanco */
+    padding: 25px 0;              /* Espaciado interno en el footer */
+    text-align: center;           /* Alineación centrada del texto */
+    margin-top: auto;             /* Esto asegura que el footer esté pegado al fondo */
+    flex-shrink: 0;    
+    margin-top: 5%;           /* Evita que el footer se encoja */
+  }
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  .modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .home-section {
+    padding: 20px;
+    background-color: #f5f5f5;  /* Fondo blanco suave */
+  }
+  
+  .services {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .service-cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about, .contact {
+    margin-bottom: 30px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: 1a252f;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  
+
+
+
+
+  
+  /* Fondo blanco y bordes redondeados para los contenedores */
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Títulos centrados */
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a252f;
+  }
+  
+  /* Botón de envío con estilo de Bootstrap */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  /* Espaciado entre las secciones */
+  .mt-5 {
+    margin-top: 40px;
+  }
+  
+  /* Estilo para el historial de correos */
+  .list-group-item {
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .list-group-item p {
+    margin-bottom: 8px;
+  }
+  

@@ -1,0 +1,20 @@
+<div class="container">
+  <footer id="text" class="py-3 my-4" style="background-color: #1a252f; color: white;">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a routerLink="/home" class="nav-link px-2 text-white">Inicio</a></li>
+      <li class="nav-item"><a routerLink="/services" class="nav-link px-2 text-white">Servicios</a></li>
+      <li class="nav-item"><a routerLink="/dashboard" class="nav-link px-2 text-white">Dashboard</a></li>
+      <li class="nav-item"><a routerLink="/support" class="nav-link px-2 text-white">Soporte</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Cerrar Sesion</a></li>
+      <li>
+        <a routerLink="/cart" class="nav-link">
+          <i class="bi bi-cart"></i>
+          <span *ngIf="cartCount > 0" class="badge bg-primary">
+            {{ cartCount }}
+          </span>
+        </a>
+      </li>
+    </ul>
+<p class="resplandor">&copy; 2024 <strong>Auto Gleam</strong>. Todos los derechos reservados.</p>
+  <small>Diseñado con pasión para una mejor experiencia de usuario.</small>  </footer>
+</div>

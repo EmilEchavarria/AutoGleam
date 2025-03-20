@@ -1,0 +1,65 @@
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+    <!-- Logo -->
+    <div class="col-6 col-md-3 mb-2 mb-md-0">
+      <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+        <img src="./assets/img/logo.png" alt="Logo" class="img-fluid custom-logo">
+      </a>
+    </div>
+
+    <!-- Menú de navegación general -->
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 d-none d-md-flex">
+      <li><a routerLink="/home" class="nav-link px-2 link-secondary">Inicio</a></li>
+      <li><a routerLink="/services" class="nav-link px-2">Servicios</a></li>
+      <li><a routerLink="/dashboard" class="nav-link px-2">Dashboard</a></li>
+      <li><a  routerLink="/support" class="nav-link px-2">Soporte</a></li>
+      <li><a href="#" class="nav-link px-2">Cerrar sesión</a></li>
+
+      <!-- Carrito -->
+      <li>
+        <a routerLink="/cart" class="nav-link px-2">
+          <i class="bi bi-cart"></i>
+          <span *ngIf="cartCount > 0" class="badge bg-primary">
+            {{ cartCount }}
+          </span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Botón de hamburguesa (visible solo en pantallas pequeñas) -->
+    <button
+    class="navbar-toggler d-md-none border-0"
+    type="button"
+    (click)="toggleSidebar()"
+    aria-label="Toggle sidebar"
+    style="font-size: 7rem;" >
+    <i class="bi bi-list fs-1"></i> <!-- Ícono de hamburguesa -->
+  </button>
+  
+  </header>
+</div>
+
+<!-- Sidebar (solo visible en pantallas pequeñas) -->
+<div class="sidebar" [ngClass]="{ 'sidebar-open': isSidebarOpen }">
+  <button class="close-btn" (click)="toggleSidebar()">
+    <i class="bi bi-x-lg"></i> <!-- Ícono para cerrar -->
+  </button>
+
+  <ul class="sidebar-menu">
+    <li><a routerLink="/home" class="nav-link">Inicio</a></li>
+    <li><a routerLink="/services" class="nav-link">Servicios</a></li>
+    <li><a routerLink="/dashboard" class="nav-link">Dashboard</a></li>
+    <li><a routerLink="/support" class="nav-link">Soporte</a></li>
+    <li><a routerLink="" class="nav-link">Cerrar sesión</a></li>
+
+    <!-- Carrito -->
+    <li>
+      <a routerLink="/cart" class="nav-link">
+        <i class="bi bi-cart"></i>
+        <span *ngIf="cartCount > 0" class="badge bg-primary">
+          {{ cartCount }}
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>

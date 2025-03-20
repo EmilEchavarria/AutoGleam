@@ -1,0 +1,94 @@
+<div class="home-container">
+  <div class="main-content">
+    <app-header></app-header>
+
+    <div class="container-fluid bg-light py-4">
+      <div class="row">
+        <!-- Sidebar (opcional) -->
+        <!-- Aquí iría tu barra lateral si la tienes -->
+
+        <!-- Contenido principal -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+            <h1 class="h2 text-dark">Panel de Cliente</h1>
+          </div>
+
+          <!-- Sección de Perfil -->
+          <div class="row mb-5">
+            <div class="col-lg-4 mb-4">
+              <div class="card shadow-sm border-0 rounded">
+                <div class="card-body">
+                  <h5 class="card-title text-center text-secondary">Información del Perfil</h5>
+
+                  <div class="text-center mb-3">
+                    <!-- Imagen de Perfil -->
+                     <!--<img [src]="profileImage || 'default-image.jpg'" alt="Profile Image" class="img-fluid rounded-circle" width="150">-->
+                    
+                    <!-- Mostrar el campo para cargar imagen solo si está en modo de edición -->
+                    <div *ngIf="isEditing">
+                      <input type="file" (change)="onImageChange($event)" class="form-control mt-2" accept="image/*" />
+                    </div>
+                  </div>
+
+                  <p class="card-text"><strong>Nombre:</strong> 
+                    <span *ngIf="!isEditing" class="text-dark">{{ userName }}</span>
+                    <input *ngIf="isEditing" [(ngModel)]="userName" class="form-control" placeholder="Ingresa tu nombre" />
+                  </p>
+
+                  <p class="card-text"><strong>Correo electrónico:</strong> <span class="text-muted">{{ userEmail }}</span></p>
+
+                  <!-- Botón para alternar entre modo de edición y vista normal -->
+                  <div class="d-flex justify-content-between">
+                    <button *ngIf="!isEditing" class="btn btn-outline-primary" (click)="toggleEditMode()">Editar Perfil</button>
+                    <button *ngIf="isEditing" class="btn btn-success" (click)="saveNewName()">Guardar Cambios</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notificaciones -->
+            <div class="col-lg-4 mb-4">
+              <div class="card shadow-sm border-0 rounded">
+                <div class="card-body">
+                  <h5 class="card-title text-center text-info">Notificaciones</h5>
+                  <ul class="list-group list-group-flush">
+                    <li *ngFor="let notification of notifications" class="list-group-item bg-light">
+                      {{ notification.message }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Historial de Servicios -->
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+            <h2 class="h4 text-dark">Historial de Servicios</h2>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr class="table-light">
+                  <th>#</th>
+                  <th>Servicio</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let service of services" class="table-hover">
+                  <td>{{ service.id }}</td>
+                  <td>{{ service.service }}</td>
+                  <td>{{ service.date }}</td>
+                  <td>{{ service.status }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+</div>
